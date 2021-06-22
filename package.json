@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jev11/otus-lesson-21/issues"
   },
-  "homepage": "https://github.com/jev11/otus-lesson-21#readme"
+  "homepage": "https://github.com/jev11/otus-lesson-21#readme",
+  "devDependencies": {
+    "typescript": "^4.3.4"
+  }
 }
