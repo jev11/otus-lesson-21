@@ -1,6 +1,5 @@
 module.exports = {
     "env": {
-        "node": true,
         "browser": true,
         "es2021": true,
         "jest/globals": true,
@@ -22,7 +21,9 @@ module.exports = {
     "rules": {
         "import/prefer-default-export": "off",
         "import/no-unresolved": "off", // https://github.com/typescript-eslint/typescript-eslint/issues/1624
-        "import/extensions": ["warn", "never"] // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
+        "import/extensions": ["warn", "never"],// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
+        "no-vars-requires": "off",
+        "no-console": "off"
     },
     ignorePatterns: ["dist/**/*.js"]
 };

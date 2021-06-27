@@ -3,14 +3,16 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.ts",
+  // devtool: "source-map",
   output: {
-    filename: "main.js",
+    filename: "index.js",
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
+    // hot: true,
     port: 9000,
   },
   optimization: {
@@ -21,8 +23,20 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Custom template using Handlebars",
-      template: "templates/index.hbs",
+      filename: "index.html",
+      template: "src/html/index.html",
+      minify: false
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.(j|t)s$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      }
+    ]
+  }
 };
