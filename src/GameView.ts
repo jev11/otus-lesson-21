@@ -14,18 +14,11 @@ export interface IGameView {
 }
 
 export class GameView implements IGameView {
+
   el: HTMLElement;
-
-
-  // width = 10;
-
-  // height = 10;
-
-  // isRunning: boolean;
 
   constructor(element: HTMLElement) {
     this.el = element;
-    // this.isRunning = false;
     this.el.innerHTML = `
       <div class="gameField"></div>
       <div class="gameControls">
@@ -45,6 +38,7 @@ export class GameView implements IGameView {
         </div>
       </div>
       `;
+
   }
 
   updateGameField(field: Cell[][]) : void {
@@ -97,11 +91,9 @@ export class GameView implements IGameView {
     const table = <HTMLElement>this.el.querySelector(".gameField");
     table.addEventListener("click", (ev) => {
       const clickedElement = ev.target;
-      // @ts-ignore
-      const x = clickedElement.getAttribute("data-x");
-      // @ts-ignore
-      const y = clickedElement.getAttribute("data-y");
-      if (x >= 0 && y >= 0) {
+      const x = (clickedElement as HTMLElement).getAttribute("data-x");
+      const y = (clickedElement as HTMLElement).getAttribute("data-y");
+      if (Number(x) >= 0 && Number(y) >= 0) {
         cb(Number(x), Number(y));
       }
     });
@@ -109,19 +101,15 @@ export class GameView implements IGameView {
 
   onSpeedChange(cb: (speed: number) => void) : void {
     const range = <HTMLInputElement>this.el.querySelector(".slider");
-    // console.log(range);
     range.addEventListener("input", () => {
       cb(Number(range.value));
-
     })
-
   }
 
   onGameStateChange(cb: (newState: boolean) => void) : void {
     const buttonEl = <HTMLElement>this.el.querySelector(".run-button");
     buttonEl.addEventListener("click", (ev) => {
-      // @ts-ignore
-      const newState = ev.target.innerHTML === 'Play';
+      const newState = (ev.target as HTMLElement).innerHTML === 'Play';
       cb(newState);
     });
   }

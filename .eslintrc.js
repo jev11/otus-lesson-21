@@ -24,8 +24,7 @@ module.exports = {
         "import/extensions": ["warn", "never"],// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
         "no-vars-requires": "off",
         "no-console": "off",
-        "no-alert": "off",
-        "ts-ignore": "off"
+        "no-alert": "off"
     },
     ignorePatterns: ["dist/**/*.js"]
 };
