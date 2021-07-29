@@ -1,0 +1,58 @@
+{
+  "name": "otus-lesson-21",
+  "version": "1.0.0",
+  "description": "Assignment for lesson 21",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest tests/",
+    "test:coverage": "jest --coverage",
+    "lint": "npx tsc --noEmit && prettier --check src/**/*.ts && eslint src/**/*.ts",
+    "lint:fix": "prettier --write src/**/*.ts && eslint --fix src/**/*.ts",
+    "build": "webpack --mode=production",
+    "serve": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jev11/otus-lesson-21.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jev11/otus-lesson-21/issues"
+  },
+  "homepage": "https://github.com/jev11/otus-lesson-21#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-typescript": "^7.14.5",
+    "@babel/runtime": "^7.14.6",
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "babel-jest": "^27.0.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.6",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "html-webpack-plugin": "^5.3.1",
+    "husky": "^6.0.0",
+    "jest": "^27.0.5",
+    "lint-staged": "^11.0.0",
+    "path": "^0.12.7",
+    "prettier": "^2.3.2",
+    "style-loader": "^3.0.0",
+    "ts-loader": "^9.2.3",
+    "typescript": "^4.3.4",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "lint-staged": {
+    "src/**/*.ts": "eslint --cache --fix",
+    "*.{ts,css,md}": "prettier --write"
+  }
+}
