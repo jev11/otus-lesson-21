@@ -37,7 +37,7 @@ export class GameView implements IGameView {
       </div>
         <div class="speedRange">
           <span>Faster</span>
-          <input type="range" min="100" max="3000" step="100" value="1000" class="slider">
+          <input type="range" min="100" max="2000" step="100" value="1000" class="slider">
           <span>Slower</span>
         </div>
         <div class="run-button">
