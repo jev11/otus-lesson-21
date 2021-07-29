@@ -23,7 +23,9 @@ module.exports = {
         "import/no-unresolved": "off", // https://github.com/typescript-eslint/typescript-eslint/issues/1624
         "import/extensions": ["warn", "never"],// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
         "no-vars-requires": "off",
-        "no-console": "off"
+        "no-console": "off",
+        "no-alert": "off",
+        "ts-ignore": "off"
     },
     ignorePatterns: ["dist/**/*.js"]
 };
